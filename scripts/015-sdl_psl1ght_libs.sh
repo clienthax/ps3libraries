@@ -5,7 +5,7 @@
 ../download.sh sdl_psl1ght_libs.tar.gz
 
 ## Fetch config.guess and config.sub, falling back to copies if Savannah is unavailable
-../scripts/get-config-scripts.sh
+../utils/get-config-scripts.sh
 
 ## Unpack the source code.
 rm -Rf sdl_psl1ght_libs && mkdir sdl_psl1ght_libs && tar --strip-components=1 --directory=sdl_psl1ght_libs -xvzf ../archives/sdl_psl1ght_libs.tar.gz

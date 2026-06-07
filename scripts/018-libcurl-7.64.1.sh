@@ -7,7 +7,7 @@ VERSION=7.64.1
 ../download.sh curl-${VERSION}.tar.gz
 
 ## Fetch config.guess and config.sub, falling back to copies if Savannah is unavailable
-../scripts/get-config-scripts.sh
+../utils/get-config-scripts.sh
 
 ## Unpack the source code.
 rm -Rf curl-${VERSION} && tar xfvz ../archives/curl-${VERSION}.tar.gz && cd curl-${VERSION}

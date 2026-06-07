@@ -5,7 +5,7 @@
 ../download.sh tiff-3.9.4.tar.gz
 
 ## Fetch config.guess and config.sub, falling back to copies if Savannah is unavailable
-../scripts/get-config-scripts.sh
+../utils/get-config-scripts.sh
 
 ## Unpack the source code.
 rm -Rf tiff-3.9.4 && tar xfvz ../archives/tiff-3.9.4.tar.gz && cd tiff-3.9.4

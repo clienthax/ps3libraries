@@ -5,7 +5,7 @@
 ../download.sh libogg-1.3.4.tar.gz
 
 ## Fetch config.guess and config.sub, falling back to copies if Savannah is unavailable
-../scripts/get-config-scripts.sh
+../utils/get-config-scripts.sh
 
 ## Unpack the source code.
 rm -Rf libogg-1.3.4 && tar xfvz ../archives/libogg-1.3.4.tar.gz && cd libogg-1.3.4

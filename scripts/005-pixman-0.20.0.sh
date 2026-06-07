@@ -5,7 +5,7 @@
 ../download.sh pixman-0.20.0.tar.gz
 
 ## Fetch config.guess and config.sub, falling back to copies if Savannah is unavailable
-../scripts/get-config-scripts.sh
+../utils/get-config-scripts.sh
 
 ## Unpack the source code.
 rm -Rf pixman-0.20.0 && tar xfvz ../archives/pixman-0.20.0.tar.gz && cd pixman-0.20.0

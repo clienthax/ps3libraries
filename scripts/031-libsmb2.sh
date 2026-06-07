@@ -7,7 +7,10 @@
 ../download.sh libsmb2.tar.gz 
 
 ## Unpack the source code.
-rm -Rf libsmb2 && mkdir libsmb2 && tar --strip-components=1 --directory=libsmb2 -xvzf ../archives/libsmb2.tar.gz && cd libsmb2/lib
+rm -Rf libsmb2
+mkdir libsmb2
+tar --strip-components=1 --directory=libsmb2 -xvzf ../archives/libsmb2.tar.gz
+cd libsmb2/lib
 
 ## Compile and install.
 ${MAKE:-make} -f Makefile.PS3_PPU install

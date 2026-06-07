@@ -5,7 +5,7 @@
 ../download.sh flac-1.2.1.tar.gz
 
 ## Fetch config.guess and config.sub, falling back to copies if Savannah is unavailable
-../scripts/get-config-scripts.sh
+../utils/get-config-scripts.sh
 
 ## Unpack the source code.
 rm -Rf flac-1.2.1 && tar xfvz ../archives/flac-1.2.1.tar.gz && cd flac-1.2.1

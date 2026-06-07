@@ -10,19 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Check shell scripts are executable
       run: |
-        test -x libraries.sh
-        test -x scripts/get-config-scripts.sh
-        find scripts depends -name '*.sh' -exec test -x {} \;
+        bad=()
+        while IFS= read -r f; do
+          test -x "$f" || bad+=("$f")
+        done < <(find . -name '*.sh')
+        if (( ${#bad[@]} )); then
+          printf 'NOT executable: %s\n' "${bad[@]}"
+          exit 1
+        fi
 
     - name: Check config helper cache path
       run: |
         mkdir -p build
         cd build
-        CONFIG_BASE_URL="https://127.0.0.1/pretend-savannah-is-down" CONFIG_TIMEOUT=1 ../scripts/get-config-scripts.sh
+        NO_SAVANNAH=1 ../utils/get-config-scripts.sh
         test -s ../archives/config.guess
         test -s ../archives/config.sub
 

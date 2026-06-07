@@ -5,7 +5,7 @@
 ../download.sh freetype-2.4.3.tar.gz
 
 ## Fetch config.guess and config.sub, falling back to copies if Savannah is unavailable
-../scripts/get-config-scripts.sh
+../utils/get-config-scripts.sh
 
 ## Unpack the source code.
 rm -Rf freetype-2.4.3 && tar xfvz ../archives/freetype-2.4.3.tar.gz && cd freetype-2.4.3

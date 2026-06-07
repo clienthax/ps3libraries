@@ -4,7 +4,7 @@
 ../download.sh json-c-0.11-20130402
 
 ## Fetch config.guess and config.sub, falling back to copies if Savannah is unavailable
-../scripts/get-config-scripts.sh
+../utils/get-config-scripts.sh
 
 ## Unpack the source code.
 rm -Rf jsonc && mkdir jsonc && tar --strip-components=1 --directory=jsonc -xvzf ../archives/json-c-0.11-20130402

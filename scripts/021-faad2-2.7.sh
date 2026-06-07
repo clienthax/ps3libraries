@@ -5,7 +5,7 @@
 ../download.sh faad2-2.7.tar.gz
 
 ## Fetch config.guess and config.sub, falling back to copies if Savannah is unavailable
-../scripts/get-config-scripts.sh
+../utils/get-config-scripts.sh
 
 ## Unpack the source code.
 rm -Rf faad2-2.7 && tar xfvz ../archives/faad2-2.7.tar.gz && cd faad2-2.7

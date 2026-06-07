@@ -1,4 +1,5 @@
-#!/bin/sh -e
+#!/bin/sh
+set -e
 
 CONFIG_TIMEOUT="${CONFIG_TIMEOUT:-15}"
 CONFIG_BASE_URL="https://git.savannah.gnu.org/cgit/config.git/plain"
@@ -40,5 +41,11 @@ fetch_config_file() {
   chmod +x "${file}"
 }
 
-fetch_config_file config.guess
-fetch_config_file config.sub
+if [ -z "${NO_SAVANNAH}" ]; then
+    fetch_config_file config.guess
+    fetch_config_file config.sub
+else
+    echo "NO_SAVANNAH is set, skipping Savannah downloads."
+    cp "${ASSET_DIR}/config.guess" "config.guess"
+    cp "${ASSET_DIR}/config.sub" "config.sub"
+fi
